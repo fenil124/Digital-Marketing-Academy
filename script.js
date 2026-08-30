@@ -110,18 +110,25 @@
 
     // Mobile Hamburger Menu Toggle
     if (hamburgerBtn && navMenu) {
+      function closeNavMenu() {
+        navMenu.classList.remove("active");
+        hamburgerBtn.classList.remove("active");
+        hamburgerBtn.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+      }
+
       hamburgerBtn.addEventListener("click", function () {
         const isOpen = navMenu.classList.toggle("active");
         hamburgerBtn.classList.toggle("active", isOpen);
         hamburgerBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        document.body.style.overflow = isOpen ? "hidden" : "";
       });
 
-      // Close menu when clicking any nav link
-      navLinks.forEach(function (link) {
+      // Close menu when clicking any nav link or CTA button inside menu
+      const allMenuLinks = navMenu.querySelectorAll("a, button");
+      allMenuLinks.forEach(function (link) {
         link.addEventListener("click", function () {
-          navMenu.classList.remove("active");
-          hamburgerBtn.classList.remove("active");
-          hamburgerBtn.setAttribute("aria-expanded", "false");
+          closeNavMenu();
         });
       });
 
@@ -132,9 +139,7 @@
           !navMenu.contains(e.target) &&
           !hamburgerBtn.contains(e.target)
         ) {
-          navMenu.classList.remove("active");
-          hamburgerBtn.classList.remove("active");
-          hamburgerBtn.setAttribute("aria-expanded", "false");
+          closeNavMenu();
         }
       });
     }

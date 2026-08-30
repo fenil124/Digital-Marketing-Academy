@@ -13,7 +13,7 @@
   --primary-700: #1d4ed8;
   --primary-800: #1e40af;
   --primary-900: #1e3a8a;
-  
+
   /* Slate / Dark Accents */
   --dark-950: #0b0f19;
   --dark-900: #0f172a;
@@ -43,15 +43,36 @@
 
   /* Gradients */
   --gradient-primary: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-  --gradient-hero-bg: radial-gradient(circle at 85% 15%, rgba(37, 99, 235, 0.08) 0%, transparent 50%),
-                      radial-gradient(circle at 15% 85%, rgba(245, 158, 11, 0.05) 0%, transparent 45%);
-  --gradient-text: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #0284c7 100%);
-  --gradient-card-border: linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(226, 232, 240, 0.6));
+  --gradient-hero-bg:
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(37, 99, 235, 0.08) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 15% 85%,
+      rgba(245, 158, 11, 0.05) 0%,
+      transparent 45%
+    );
+  --gradient-text: linear-gradient(
+    135deg,
+    #1e3a8a 0%,
+    #2563eb 50%,
+    #0284c7 100%
+  );
+  --gradient-card-border: linear-gradient(
+    135deg,
+    rgba(37, 99, 235, 0.2),
+    rgba(226, 232, 240, 0.6)
+  );
   --gradient-gold: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
 
   /* Typography */
-  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading:
+    "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body:
+    "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
 
   /* Layout & Spacing */
   --container-max: 1200px;
@@ -61,10 +82,17 @@
 
   /* Shadows */
   --shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
-  --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.04);
-  --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.09), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
-  --shadow-card-hover: 0 22px 35px -10px rgba(37, 99, 235, 0.12), 0 8px 15px -5px rgba(15, 23, 42, 0.06);
+  --shadow-md:
+    0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+  --shadow-lg:
+    0 10px 15px -3px rgba(15, 23, 42, 0.08),
+    0 4px 6px -4px rgba(15, 23, 42, 0.04);
+  --shadow-xl:
+    0 20px 25px -5px rgba(15, 23, 42, 0.09),
+    0 8px 10px -6px rgba(15, 23, 42, 0.04);
+  --shadow-card-hover:
+    0 22px 35px -10px rgba(37, 99, 235, 0.12),
+    0 8px 15px -5px rgba(15, 23, 42, 0.06);
   --shadow-glow: 0 0 25px rgba(37, 99, 235, 0.25);
 
   /* Border Radii */
@@ -81,7 +109,9 @@
 }
 
 /* --- RESET & GLOBAL BASE --- */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -103,7 +133,8 @@ body {
   overflow-x: hidden;
 }
 
-img, svg {
+img,
+svg {
   display: block;
   max-width: 100%;
 }
@@ -118,7 +149,10 @@ ul {
   list-style: none;
 }
 
-button, input, select, textarea {
+button,
+input,
+select,
+textarea {
   font: inherit;
 }
 
@@ -298,7 +332,7 @@ button, input, select, textarea {
 }
 
 .nav-link::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -741,10 +775,22 @@ button, input, select, textarea {
   font-size: 1.1rem;
 }
 
-.module-seo .module-icon-wrap { background-color: #e0e7ff; color: #4338ca; }
-.module-gads .module-icon-wrap { background-color: #fee2e2; color: #dc2626; }
-.module-ppc .module-icon-wrap { background-color: #fef3c7; color: #d97706; }
-.module-smm .module-icon-wrap { background-color: #e0f2fe; color: #0284c7; }
+.module-seo .module-icon-wrap {
+  background-color: #e0e7ff;
+  color: #4338ca;
+}
+.module-gads .module-icon-wrap {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+.module-ppc .module-icon-wrap {
+  background-color: #fef3c7;
+  color: #d97706;
+}
+.module-smm .module-icon-wrap {
+  background-color: #e0f2fe;
+  color: #0284c7;
+}
 
 .module-info {
   flex: 1;
@@ -845,8 +891,13 @@ button, input, select, textarea {
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-8px); }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 /* --- GOOGLE ADS RELEVANCE STRIP --- */
@@ -961,10 +1012,22 @@ button, input, select, textarea {
   flex-shrink: 0;
 }
 
-.icon-seo { background: #e0e7ff; color: #4338ca; }
-.icon-gads { background: #fee2e2; color: #dc2626; }
-.icon-ppc { background: #fef3c7; color: #d97706; }
-.icon-smm { background: #e0f2fe; color: #0284c7; }
+.icon-seo {
+  background: #e0e7ff;
+  color: #4338ca;
+}
+.icon-gads {
+  background: #fee2e2;
+  color: #dc2626;
+}
+.icon-ppc {
+  background: #fef3c7;
+  color: #d97706;
+}
+.icon-smm {
+  background: #e0f2fe;
+  color: #0284c7;
+}
 
 .card-step {
   font-size: 0.7rem;
@@ -1062,13 +1125,17 @@ button, input, select, textarea {
 }
 
 .course-banner-cta::before {
-  content: '';
+  content: "";
   position: absolute;
   right: -50px;
   top: -50px;
   width: 200px;
   height: 200px;
-  background: radial-gradient(circle, rgba(37, 99, 235, 0.4) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(37, 99, 235, 0.4) 0%,
+    transparent 70%
+  );
   border-radius: 50%;
 }
 
@@ -1248,8 +1315,13 @@ button, input, select, textarea {
 /* Left info panel */
 .enquiry-info-panel {
   padding: 3.5rem 3rem;
-  background: radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.25) 0%, transparent 60%),
-              linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  background:
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(37, 99, 235, 0.25) 0%,
+      transparent 60%
+    ),
+    linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
   color: var(--white);
   display: flex;
   flex-direction: column;
@@ -1495,8 +1567,14 @@ button, input, select, textarea {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .success-icon {
@@ -1621,7 +1699,9 @@ button, input, select, textarea {
   justify-content: center;
   font-size: 0.85rem;
   flex-shrink: 0;
-  transition: transform var(--transition-normal), background-color var(--transition-normal);
+  transition:
+    transform var(--transition-normal),
+    background-color var(--transition-normal);
 }
 
 .faq-item.active .faq-toggle-icon {
@@ -1961,8 +2041,14 @@ button, input, select, textarea {
 }
 
 @keyframes modalPop {
-  from { opacity: 0; transform: scale(0.92); }
-  to { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .modal-header {

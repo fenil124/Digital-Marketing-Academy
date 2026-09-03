@@ -430,6 +430,12 @@
           successBox.scrollIntoView({ behavior: "smooth", block: "nearest" });
         }
 
+        // Push custom event to Google Tag Manager dataLayer
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: "lead_form_submit",
+        });
+
         // Reset submit button state
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalText;

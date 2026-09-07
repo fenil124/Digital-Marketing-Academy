@@ -148,7 +148,7 @@
   /**
    * Update active nav link based on scroll position and sync address bar
    */
-  let currentActiveSectionId = '';
+  let currentActiveSectionId = "";
   function updateActiveNavLinkOnScroll() {
     const sections = document.querySelectorAll("section[id], header[id]");
     const scrollPos = window.scrollY + 130;
@@ -187,31 +187,32 @@
       }
     }
 
-    window.addEventListener('load', function () {
+    window.addEventListener("load", function () {
       setTimeout(checkAndScroll, 100);
     });
 
-    window.addEventListener('hashchange', function () {
+    window.addEventListener("hashchange", function () {
       checkAndScroll();
     });
   }
 
   function navigateToSection(target, updateUrl = true) {
     if (!target) return;
-    
+
     // Clean any leading '#', '/', or '#/' to get pure section ID (e.g. '/course', '#/course', '#course' -> 'course')
-    const targetId = target.replace(/^[#\/]+/, '');
+    const targetId = target.replace(/^[#\/]+/, "");
     if (!targetId) return;
 
     const targetSection = document.getElementById(targetId);
 
     if (targetSection) {
       const offset = 80;
-      const targetPos = targetSection.getBoundingClientRect().top + window.pageYOffset - offset;
+      const targetPos =
+        targetSection.getBoundingClientRect().top + window.pageYOffset - offset;
 
       window.scrollTo({
         top: Math.max(0, targetPos),
-        behavior: 'smooth'
+        behavior: "smooth",
       });
 
       // Update URL in browser address bar to #/section format
@@ -219,17 +220,17 @@
         history.pushState(null, null, `#/${targetId}`);
       }
 
-      if (targetId === 'enquire') {
+      if (targetId === "enquire") {
         setTimeout(function () {
-          const nameInput = document.getElementById('fullname');
+          const nameInput = document.getElementById("fullname");
           if (nameInput) nameInput.focus({ preventScroll: true });
         }, 400);
       }
 
-      if (targetId.startsWith('faq-')) {
+      if (targetId.startsWith("faq-")) {
         setTimeout(function () {
-          const btn = targetSection.querySelector('.faq-question');
-          if (btn && !targetSection.classList.contains('active')) {
+          const btn = targetSection.querySelector(".faq-question");
+          if (btn && !targetSection.classList.contains("active")) {
             btn.click();
           }
         }, 300);
@@ -434,6 +435,7 @@
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
           event: "lead_form_submit",
+          course_name: newLead.course,
         });
 
         // Reset submit button state
